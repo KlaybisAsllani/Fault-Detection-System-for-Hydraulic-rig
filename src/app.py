@@ -8,25 +8,20 @@ from sklearn.metrics import classification_report
 
 app = Flask(__name__)
 
-# List of sensor files
 sensor_files = [
     'PS1.txt', 'PS2.txt', 'PS3.txt', 'PS4.txt', 'PS5.txt', 'PS6.txt',
     'EPS1.txt', 'FS1.txt', 'FS2.txt', 'TS1.txt', 'TS2.txt', 'TS3.txt',
     'TS4.txt', 'VS1.txt', 'CE.txt', 'CP.txt', 'SE.txt'
 ]
 
-# Load and preprocess data
 data = load_data(sensor_files, 'profile.txt')
 X = data.iloc[:, :-5]
 y = data.iloc[:, -5:].idxmax(axis=1)  # Assuming the last 5 columns are the target labels
 
-# Preprocess data
 X_normalized, scaler = preprocess_data(data)
 
-# Split the data
 X_train, X_test, y_train, y_test = train_test_split(X_normalized, y, test_size=0.2, random_state=42)
 
-# Train the model
 model = train_model(X_train, y_train)
 
 # Print classification report
