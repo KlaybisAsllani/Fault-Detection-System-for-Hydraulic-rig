@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fault Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fault Detection System for Hydraulic Rig</h1>
+        <form id="monitor-form">
+            <label for="temperature">Temperature:</label>
+            <input type="text" id="temperature" name="temperature"><br>
+            <label for="pressure">Pressure:</label>
+            <input type="text" id="pressure" name="pressure"><br>
+            <label for="flow_rate">Flow Rate:</label>
+            <input type="text" id="flow_rate" name="flow_rate"><br>
+            <label for="pH">pH:</label>
+            <input type="text" id="pH" name="pH"><br>
+            <button type="submit">Monitor</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
