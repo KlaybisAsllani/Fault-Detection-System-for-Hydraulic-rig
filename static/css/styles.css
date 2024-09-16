@@ -1,0 +1,101 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    color: #00ffcc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ff6600;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #00ffcc;
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #00ffcc;
+    background: #1a1a1a;
+    color: #00ffcc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+button {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff6600, #ff3300);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff3300, #ff6600);
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #00ffcc;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ffcc;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+/* Background Animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6600, #00ffcc, #ff3300);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    z-index: -1;
+}
