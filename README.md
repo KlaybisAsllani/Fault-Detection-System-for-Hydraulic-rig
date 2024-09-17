@@ -1,4 +1,4 @@
-# Fault Detection System for Hydraulic Rig
+# Fault Detection System for a Hydraulic Rig
 
 ## Overview
 This project is designed to monitor and indentify faults in the chemical processes of a hydraulic rig. The parameters observed are: temperature, pressure, flow rate, and pH. "Condition monitoring of hydraulic systems", a comprehensive dataset from UCI, is used. Machine learning models like Scikit-learn and RandomForestClassifier are employed to diagnose the type and severity of faults, providing early warnings. Also included is a web-based interface for easy interaction and visualization.
