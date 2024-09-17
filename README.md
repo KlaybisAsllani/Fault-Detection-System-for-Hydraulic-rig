@@ -7,4 +7,4 @@ This project is designed to monitor and indentify faults in a the chemical proce
 Helwig, N., Pignanelli, E., & Schtze, A. (2015). Condition monitoring of hydraulic systems [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5CW21.
 
 ## Acknowledgments
-We would like to acknowledge the UCI Machine Learning Repository and the authors of the dataset for providing the data used in this project. Proper credit should be given to the original authors and the repository when using this dataset for any purpose.
+I would like to acknowledge the UCI Machine Learning Repository and the authors of the dataset for providing the data used in this project. Proper credit should be given to the original authors and the repository when using this dataset for any purpose.
