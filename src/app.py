@@ -30,11 +30,24 @@ print(classification_report(y_test, y_pred))
 
 @app.route('/monitor', methods=['POST'])
 def monitor():
-    incoming_data = request.json
-    new_data = pd.DataFrame(incoming_data)
-    prediction = monitor_sensor_data(model, scaler, new_data)
-    diagnosis = diagnose_fault(prediction)
-    return jsonify({'prediction': prediction.tolist(), 'diagnosis': diagnosis})
+    try:
+        incoming_data = request.json
+        if not incoming_data:
+            return jsonify({'error': 'No data provided'}), 400
+        
+        new_data = pd.DataFrame(incoming_data)
+        if new_data.empty:
+            return jsonify({'error': 'Invalid data format'}), 400
+        
+        prediction = monitor_sensor_data(model, scaler, new_data)
+        diagnosis = diagnose_fault(prediction)
+        return jsonify({'prediction': prediction.tolist(), 'diagnosis': diagnosis})
+    
+    except ValueError as ve:
+        return jsonify({'error': f'Value error: {str(ve)}'}), 400
+    
+    except Exception as e:
+        return jsonify({'error': f'Internal server error: {str(e)}'}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
